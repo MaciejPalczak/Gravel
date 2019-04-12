@@ -45,9 +45,9 @@ public class Client {
                     }
                     i++;
                 }
+                accountant.setBudget(accountant.getBudget()+(weight*100)); //cost of 1 kilogram of gravel is equal 100 currency
+                setBudget(getBudget()-weight*100);
             }
-            accountant.setBudget(accountant.getBudget()+(weight*100));
-            setBudget(getBudget()-weight*100);
         }
     }
     public static Long getBudget() {

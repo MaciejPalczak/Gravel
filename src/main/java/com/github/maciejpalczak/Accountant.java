@@ -40,4 +40,8 @@ public class Accountant {
         this.id=id;
         logger.info("Accountant created succesfully");
     }
+
+    public String getId() {
+        return id;
+    }
 }

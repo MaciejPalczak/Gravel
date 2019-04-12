@@ -3,6 +3,8 @@ package com.github.maciejpalczak;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
+
 public class Gravel {
 
     private Long weight; //weight in kilograms
@@ -21,5 +23,20 @@ public class Gravel {
         this.weight = weight;
         this.width = width;
         logger.info("Gravel created succesfully");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Gravel)) return false;
+        Gravel gravel = (Gravel) o;
+        return Objects.equals(getWeight(), gravel.getWeight()) &&
+                Objects.equals(getWidth(), gravel.getWidth());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getWeight(), getWidth());
     }
 }

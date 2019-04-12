@@ -23,6 +23,10 @@ public class Production {
         }
     }
 
+    public Accountant getAccountant() {
+        return accountant;
+    }
+
     public Production(Accountant accountant) {
         this.accountant = accountant; //Production is bounded with one assistant for it, for future implementation you can have a factory with many productions and accountants
         logger.info("Production create succesfully");
