@@ -25,6 +25,10 @@ public class Gravel {
         logger.info("Gravel created succesfully");
     }
 
+    public void setWeight(Long weight) {
+        this.weight = weight;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

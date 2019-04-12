@@ -12,7 +12,7 @@ public class Production {
     private Accountant accountant;
 
     public void produce() {
-        if (accountant.getBudget()>=100) {
+        if (accountant.getBudget()>=(long)100) {
             Integer value = rand.nextInt(1000); //value of dust in kilograms
             Double width = rand.nextDouble() * 200; //create random width multiplied by 200 to create number between 0 and 200mm
             accountant.add(Long.valueOf(value), width); //accountant of application notifies production of graves

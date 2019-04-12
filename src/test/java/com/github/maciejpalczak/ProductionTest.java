@@ -11,6 +11,13 @@ public class ProductionTest {
     Production production = new Production(accountant);
 
     @Test
+    public void shouldNotProduce(){
+        accountant.setBudget((long) 50);
+        production.produce();
+        assertTrue(accountant.getGravels().isEmpty());
+        assertTrue(accountant.getBudget()==50);
+    }
+    @Test
     public void shouldCheckAccountant() {
         assertTrue(production.getAccountant().equals(accountant));
     }
@@ -20,12 +27,6 @@ public class ProductionTest {
         assertFalse(accountant.getGravelsWeight()==0);
         assertTrue(accountant.getBudget()==2900);
     }
-    @Test
-    public void shouldNotProduce(){
-        accountant.setBudget((long) 50);
-        production.produce();
-        assertTrue(accountant.getGravels().isEmpty());
-        assertTrue(accountant.getBudget()==50);
-    }
+
 }
 
