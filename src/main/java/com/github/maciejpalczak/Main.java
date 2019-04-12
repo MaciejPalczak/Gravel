@@ -26,9 +26,8 @@ public class Main {
         Production usersProduction = new Production(user);
         logger.info("User created his account in CLI");
         choiceSelection(user, usersProduction);
-
-        String choice = "0";
         scanner.nextLine();
+        String choice = "0";
         while ((Integer.valueOf(choice) == 4) == false) {
             System.out.println("\nChoose what do you want to do: \n1. Produce random gravel(100 currency cost)\n2. Serve next customer\n3. View your currencies and gravel\n4. Quit app\nEnter your choice: ");
             choice = scanner.nextLine();
@@ -50,6 +49,7 @@ public class Main {
                 Client client = new Client(budgetClient, clientName);
                 client.order(minClient, maxClient, weightClient, user);
                 logger.info("Choice number 2 completed");
+                scanner.nextLine();
             } else if ((Integer.valueOf(choice) == 3)) {
                 System.out.println("You currently have " + user.getBudget() + " money,\nYour gravels: ");
                 for (Gravel grvl : user.getGravels()) {
